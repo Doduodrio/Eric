@@ -25,7 +25,7 @@ tree = app_commands.CommandTree(client)
 def now() -> str:
   #returns current timestamp
   time = datetime.datetime.now()
-  date = [time.month, time.day, time.year, (time.hour-7)%24, time.minute, time.second]
+  date = [time.month, time.day, time.year, time.hour, time.minute, time.second]
   for i in range(len(date)):
     date[i] = str(date[i])
     if len(date[i])==1: date[i] = '0' + date[i]
