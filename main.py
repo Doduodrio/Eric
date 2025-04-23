@@ -36,9 +36,10 @@ def error(message):
 
 @client.event
 async def on_ready():
-  for guild in client.guilds:
-    tree.copy_global_to(guild=guild)
-    await tree.sync(guild=guild)
+  # for guild in client.guilds:
+  #   tree.clear_commands(guild=guild)
+  #   await tree.sync(guild=guild)
+  await tree.sync(guild=None)
   guilds = '\n - '.join([f'{guild.name} (id: {guild.id})' for guild in client.guilds])
   print(f'{client.user} is active in the following guilds:')
   print(f' - {guilds}\n')
